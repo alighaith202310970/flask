@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1 id="greeting"></h1>
+
+    <div id="userMessage"></div>
+
+</div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+const name = params.get("name");
+
+const message = params.get("message");
+
+document.getElementById("greeting").textContent =
+    "Hello, " + name + "!";
+
+document.getElementById("userMessage").textContent =
+    message;
+
+</script>
+
+</body>
+</html>
